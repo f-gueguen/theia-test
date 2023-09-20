@@ -1,0 +1,24 @@
+# Use Node.js 16.14
+FROM node:16.14 AS build
+
+# Missing dependencies
+RUN apt-get update && apt-get install libsecret-1-dev libx11-dev libxkbfile-dev -y
+
+# Create directories
+RUN mkdir -p /home/theia
+
+# Copy your customized Theia project into the image
+COPY theia /home/theia
+
+# Set the working directory
+WORKDIR /home/theia
+
+# Script to clone git repo and run Theia
+COPY build-script.sh /build-script.sh
+RUN chmod +x /build-script.sh
+
+#ENV NODE_OPTIONS="--max-old-space-size=8192"
+
+# Build Theia
+RUN yarn install
+RUN yarn theia build
