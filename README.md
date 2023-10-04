@@ -26,7 +26,7 @@ Create a temporary container from the build image and copy the files to the loca
 
 ```bash
 docker create --name theia-temp theia-build
-docker cp theia-temp:/home/theia ./theia
+docker cp theia-temp:/home/theia ./built
 docker rm -v theia-temp
 ```
 

@@ -1,8 +1,11 @@
 # Use an official node runtime as a parent image
-FROM node:16.14
+FROM node:16.14-alpine
 
 # Missing dependencies
-RUN apt-get update && apt-get install libsecret-1-dev libx11-dev libxkbfile-dev -y
+RUN apk --no-cache add libsecret-dev libx11-dev libxkbfile-dev
+RUN apk --no-cache add git
+#RUN apk --no-cache add libc6-compat gcompat
+#RUN apt-get update && apt-get install libsecret-1-dev libx11-dev libxkbfile-dev -y
 
 # Set working directory to /home/theia
 WORKDIR /home/theia
@@ -22,5 +25,4 @@ RUN chmod +x /startup-script.sh
 EXPOSE 3000
 
 # Run script on container launch
-CMD [ "/startup-script.sh" ]
-
+CMD [ "sh",  "/startup-script.sh" ]

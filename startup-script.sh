@@ -16,4 +16,4 @@ git clone $GIT_REPO_URL /home/workspace
 cd /home/theia
 
 # Start Theia IDE with /home/workspace as the project directory
-yarn theia start /home/workspace --hostname=0.0.0.0 --log-level=debug
+yarn start /home/workspace --hostname=0.0.0.0

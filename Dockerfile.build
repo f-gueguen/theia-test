@@ -13,12 +13,9 @@ COPY theia /home/theia
 # Set the working directory
 WORKDIR /home/theia
 
-# Script to clone git repo and run Theia
-COPY build-script.sh /build-script.sh
-RUN chmod +x /build-script.sh
-
-#ENV NODE_OPTIONS="--max-old-space-size=8192"
+ENV NODE_OPTIONS="--max-old-space-size=32768"
+#8192
 
 # Build Theia
 RUN yarn install
-RUN yarn theia build
+RUN yarn prepare
