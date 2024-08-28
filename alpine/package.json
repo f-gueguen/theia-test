@@ -16,7 +16,7 @@
     "@theia/callhierarchy": "1.52.0",
     "@theia/console": "1.52.0",
     "@theia/core": "1.52.0",
-    "@theia/debug": "1.41.0",
+    "@theia/debug": "1.52.0",
     "@theia/editor": "1.52.0",
     "@theia/editor-preview": "1.52.0",
     "@theia/file-search": "1.52.0",
