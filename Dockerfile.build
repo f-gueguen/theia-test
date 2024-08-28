@@ -1,5 +1,5 @@
 # Use Node.js 16.14
-FROM node:16.14 AS build
+FROM node:16.20 AS build
 
 # Missing dependencies
 RUN apt-get update && apt-get install libsecret-1-dev libx11-dev libxkbfile-dev -y
