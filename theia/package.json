@@ -20,7 +20,7 @@
     "@theia/editor": "1.52.0",
     "@theia/editor-preview": "1.52.0",
     "@theia/file-search": "1.52.0",
-    "@theia/filesystem": "1.41.0",
+    "@theia/filesystem": "1.52.0",
     "@theia/getting-started": "1.52.0",
     "@theia/git": "1.41.0",
     "@theia/keymaps": "1.41.0",
