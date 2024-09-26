@@ -32,7 +32,7 @@
     "@theia/monaco": "1.41.0",
     "@theia/navigator": "1.41.0",
     "@theia/notebook": "1.41.0",
-    "@theia/outline-view": "1.41.0",
+    "@theia/outline-view": "1.54.0",
     "@theia/output": "1.41.0",
     "@theia/plugin-dev": "1.41.0",
     "@theia/plugin-ext": "1.41.0",
