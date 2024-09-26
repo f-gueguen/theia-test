@@ -27,7 +27,7 @@
     "@theia/markers": "1.41.0",
     "@theia/memory-inspector": "1.41.0",
     "@theia/messages": "1.41.0",
-    "@theia/metrics": "1.41.0",
+    "@theia/metrics": "1.54.0",
     "@theia/mini-browser": "1.41.0",
     "@theia/monaco": "1.41.0",
     "@theia/navigator": "1.41.0",
