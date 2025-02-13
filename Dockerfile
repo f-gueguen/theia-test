@@ -1,5 +1,5 @@
 # Use an official node runtime as a parent image
-FROM node:16.20-alpine
+FROM node:22.14-alpine
 
 # Missing dependencies
 RUN apk --no-cache add libsecret-dev libx11-dev libxkbfile-dev
