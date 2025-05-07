@@ -49,7 +49,7 @@
     "@theia/task": "1.41.0",
     "@theia/terminal": "1.41.0",
     "@theia/timeline": "1.41.0",
-    "@theia/toolbar": "1.41.0",
+    "@theia/toolbar": "1.61.0",
     "@theia/typehierarchy": "1.41.0",
     "@theia/userstorage": "1.41.0",
     "@theia/variable-resolver": "1.41.0",
