@@ -1,9 +1,8 @@
-ARG NODE_VERSION=16.14
+ARG NODE_VERSION=18.18
 
 # Build image
 FROM node:${NODE_VERSION}-alpine
 RUN apk add --no-cache make pkgconfig gcc g++ python3 libx11-dev libxkbfile-dev libsecret-dev
-
 
 WORKDIR /home/theia
 COPY package.json /home/theia
@@ -11,9 +10,12 @@ COPY package.json /home/theia
 ARG GITHUB_TOKEN
 ENV NODE_OPTIONS="--max-old-space-size=4096"
 
-RUN yarn --pure-lockfile && \
-    yarn theia build && \
-    yarn theia download:plugins && \
+# Install dependencies
+RUN yarn --pure-lockfile
+
+# Run Theia commands using npx to ensure it finds the locally installed binary
+RUN npx theia build && \
+    npx theia download:plugins && \
     yarn --production && \
     yarn autoclean --init && \
     echo *.ts >> .yarnclean && \
@@ -24,8 +26,6 @@ RUN yarn --pure-lockfile && \
 
 # Final image
 FROM node:${NODE_VERSION}-alpine
-# See : https://github.com/theia-ide/theia-apps/issues/34
-
 
 LABEL version="1.0" \
       description="Theia IDE Docker Image"
@@ -47,7 +47,6 @@ RUN chmod g+rw /home && \
     chown -R theia:theia /home/theia && \
     chown -R theia:theia /home/workspace;
 
-
 WORKDIR /home/theia
 COPY --from=0 --chown=theia:theia /home/theia /home/theia
 
@@ -58,9 +57,5 @@ RUN chmod +x /startup-script.sh
 EXPOSE 3000
 
 USER theia
-
-#SHELL ["/bin/bash", "-ec"]
-
-#RUN echo $SHELL
 
 CMD [ "/startup-script.sh" ]
