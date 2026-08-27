@@ -57,7 +57,7 @@
     "@theia/workspace": "1.61.0"
   },
   "devDependencies": {
-    "@theia/cli": "1.61.0"
+    "@theia/cli": "1.75.0"
   },
   "theiaPluginsDir": "plugins",
   "theiaPlugins": {
